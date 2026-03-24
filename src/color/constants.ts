@@ -13,7 +13,7 @@ export const SCHEME_KEYS: Record<SchemeColor['value'], 'lt1' | 'dk1' | 'lt2' | '
   tx1: 'dk1',
   tx2: 'dk2',
   phClr: 'lt1',
-  // passthough
+  // passthrough
   lt1: 'lt1',
   dk1: 'dk1',
   lt2: 'lt2',
