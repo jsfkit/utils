@@ -75,7 +75,7 @@ export function applyColorTransforms (
     else if (type === 'alphaOff') { a += op.value / 100; }
 
     // §5.1.2.2.17: Inverse; specifies the inverse of its input color.
-    else if (op.type === 'inv') {
+    else if (type === 'inv') {
       r = 255 - r;
       g = 255 - g;
       b = 255 - b;
@@ -83,13 +83,13 @@ export function applyColorTransforms (
 
     // §5.1.2.2.8/§5.1.2.2.18: Gamma / Inverse Gamma
     // These formulae operate on values normalised to [0, 1].
-    else if (op.type === 'gamma') {
+    else if (type === 'gamma') {
       // The output color rendered should be the sRGB gamma shift of the input color.
       r = (r / 255) ** (1 / 2.2) * 255;
       g = (g / 255) ** (1 / 2.2) * 255;
       b = (b / 255) ** (1 / 2.2) * 255;
     }
-    else if (op.type === 'invGamma') {
+    else if (type === 'invGamma') {
       // The output color rendered by should be the inverse sRGB gamma shift of the input color.
       const invG = (n: number) => (n <= 0.04045 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4) * 255;
       r = invG(r / 255);
@@ -98,7 +98,7 @@ export function applyColorTransforms (
     }
 
     // gray (Gray) §5.1.2.2.9
-    if (op.type === 'gray') {
+    if (type === 'gray') {
       // Grayscale of the input color, taking into relative intensities of the RGB primaries.
       // We use the WCAG 2.1 relative luminance, which expects [0, 1] input:
       // https://www.w3.org/TR/WCAG21/#dfn-relative-luminance
@@ -112,10 +112,10 @@ export function applyColorTransforms (
       b = lum * 255;
     }
 
-    else if (op.type === 'tint') {
+    else if (type === 'tint') {
       [ r, g, b ] = tint(r, g, b, op.value / 100);
     }
-    else if (op.type === 'shade') {
+    else if (type === 'shade') {
       [ r, g, b ] = tint(r, g, b, -op.value / 100);
     }
 
