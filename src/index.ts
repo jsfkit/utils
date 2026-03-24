@@ -7,7 +7,7 @@ export {
   PRESET_COLORS,
 } from './color/constants.ts';
 
-export { applyColorTransforms as applyColorOps } from './color/applyColorTransforms.ts';
+export { applyColorTransforms } from './color/applyColorTransforms.ts';
 export { toRGBA } from './color/toRGBA.ts';
 export { rgbaToString, rgbToString } from './color/rgbaToString.ts';
 

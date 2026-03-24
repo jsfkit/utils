@@ -17,7 +17,7 @@
 
 ## Functions
 
-- [applyColorOps](#functionsapplycoloropsmd)
+- [applyColorTransforms](#functionsapplycolortransformsmd)
 - [emuToPx](#functionsemutopxmd)
 - [getPatternData](#functionsgetpatterndatamd)
 - [pxToEmu](#functionspxtoemumd)
@@ -26,12 +26,12 @@
 - [toRGBA](#functionstorgbamd)
 
 
-<a name="functionsapplycoloropsmd"></a>
+<a name="functionsapplycolortransformsmd"></a>
 
-# applyColorOps()
+# applyColorTransforms()
 
 ```ts
-function applyColorOps(rgba: RGBA, transforms: ColorTransform[]): RGBA;
+function applyColorTransforms(rgba: RGBA, transforms: ColorTransform[]): RGBA;
 ```
 
 Given a set of RGBA colors, apply a list of color transformations on them and return the result.
