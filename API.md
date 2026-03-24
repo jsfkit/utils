@@ -20,6 +20,7 @@
 - [applyColorTransforms](#functionsapplycolortransformsmd)
 - [emuToPx](#functionsemutopxmd)
 - [getPatternData](#functionsgetpatterndatamd)
+- [parseRGBA](#functionsparsergbamd)
 - [pxToEmu](#functionspxtoemumd)
 - [rgbaToString](#functionsrgbatostringmd)
 - [rgbToString](#functionsrgbtostringmd)
@@ -103,6 +104,29 @@ paint the pattern on a canvas.
 `Uint8ClampedArray`
 
 The pattern as a 64 byte Uint8ClampedArray.
+
+
+<a name="functionsparsergbamd"></a>
+
+# parseRGBA()
+
+```ts
+function parseRGBA(value?: string): RGBA;
+```
+
+Parse a hex color string into an RGBA channel set.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `value?` | `string` | The string to parse. |
+
+## Returns
+
+[`RGBA`](#type-aliasesrgbamd)
+
+A list of the R, G, B, and A channels.
 
 
 <a name="functionspxtoemumd"></a>

@@ -1,5 +1,5 @@
 import type { Color, ThemeColorScheme } from '@jsfkit/types';
-import { parseARGB } from './parseARGB.ts';
+import { parseRGBA } from './parseRGBA.ts';
 import { hslToRgb } from './hslToRgb.ts';
 import { INDEXED_COLORS, DEFAULT_THEME_COLOR_SCHEME, SCHEME_KEYS } from './constants.ts';
 import { applyColorTransforms } from './applyColorTransforms.ts';
@@ -30,7 +30,7 @@ export function toRGBA (
   }
 
   if (color.type === 'srgb') {
-    rgba = parseARGB(color.value);
+    rgba = parseRGBA(color.value);
   }
   else if (color.type === 'scrgb') {
     rgba = [
@@ -45,10 +45,10 @@ export function toRGBA (
     rgba = hslToRgb(color.hue, color.saturation / 100, color.lightness / 100);
   }
   else if (color.type === 'system' || color.type === 'preset') {
-    rgba = parseARGB(color.value);
+    rgba = parseRGBA(color.value);
   }
   else if (color.type === 'indexed') {
-    rgba = parseARGB(indexedColors[color.value]);
+    rgba = parseRGBA(indexedColors[color.value]);
   }
   // else: "auto" color
 

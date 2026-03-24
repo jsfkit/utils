@@ -9,6 +9,7 @@ export {
 
 export { applyColorTransforms } from './color/applyColorTransforms.ts';
 export { toRGBA } from './color/toRGBA.ts';
+export { parseRGBA } from './color/parseRGBA.ts';
 export { rgbaToString, rgbToString } from './color/rgbaToString.ts';
 
 export { emuToPx } from './emu/emuToPx.ts';

@@ -35,6 +35,7 @@
     "build:docs": "typedoc && concat-md tempdocs > API.md && rm -rf tempdocs",
     "check": "npm run lint && npm run typecheck",
     "lint": "eslint src",
+    "test": "vitest run",
     "format": "eslint src --fix",
     "typecheck": "tsc",
     "release": "PACKAGE_VERSION=$(jq -r .version package.json) && echo \"About to tag and push v$PACKAGE_VERSION. Continue? (y/n)\" && read -r REPLY && [ \"$REPLY\" = \"y\" ] && git tag --annotate v$PACKAGE_VERSION --message=v$PACKAGE_VERSION && git push origin v$PACKAGE_VERSION"
@@ -49,7 +50,8 @@
     "typedoc": "^0.28.17",
     "typedoc-plugin-markdown": "~4.11.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.0",
+    "vitest": "~4.1.1"
   },
   "dependencies": {
     "@jsfkit/types": "~2.0.0"
