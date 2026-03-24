@@ -82,20 +82,19 @@ The same measure computed to pixels.
 
 ```ts
 function getPatternData(
-   patternName: PatternStyle, 
+   patternName: PatternStyle | FillPatternStyle, 
    patternColor: RGBA | RGB, 
    fillColor: RGBA | RGB): Uint8ClampedArray;
 ```
 
-Return a 64 byte Uint8ClampedArray corresponding to an 8x8
-pattern. This can then be used in an ImageData interface to
-paint the pattern on a canvas.
+Return a 256 byte Uint8ClampedArray corresponding to an 8x8 pattern (of 4 bytes per pixel).
+This can then be used in an ImageData interface to paint the pattern on a canvas.
 
 ## Parameters
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `patternName` | `PatternStyle` | The name of the pattern. |
+| `patternName` | `PatternStyle` \| `FillPatternStyle` | The name of the pattern. |
 | `patternColor` | [`RGBA`](#type-aliasesrgbamd) \| [`RGB`](#type-aliasesrgbmd) | The color for the pattern foreground fill. |
 | `fillColor` | [`RGBA`](#type-aliasesrgbamd) \| [`RGB`](#type-aliasesrgbmd) | The color for the pattern background fill. |
 
@@ -103,7 +102,7 @@ paint the pattern on a canvas.
 
 `Uint8ClampedArray`
 
-The pattern as a 64 byte Uint8ClampedArray.
+The pattern as a 256 byte Uint8ClampedArray.
 
 
 <a name="functionsparsergbamd"></a>
