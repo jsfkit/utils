@@ -239,6 +239,7 @@ type RGB = [number, number, number];
 ```
 
 A set of numbers representing R, G, and B, color channels respectively.
+The color is assumed to use the sRGB colorspace.
 
 All values range from 0 to 255.
 
@@ -252,6 +253,7 @@ type RGBA = [number, number, number, number];
 ```
 
 A set of numbers representing R, G, B, and A, color channels respectively.
+The color is assumed to use the sRGB colorspace.
 
 R, G, and B values range from 0 to 255.
 A ranges from 0 to 1.
@@ -277,6 +279,7 @@ const INDEXED_COLORS: string[];
 ```
 
 OOXML indexed color palette (indices 0–63, plus 64/65 for system foreground/background).
+The values are all 6-digit sRGB hex strings.
 
 
 <a name="variablespreset_colorsmd"></a>
@@ -287,9 +290,9 @@ OOXML indexed color palette (indices 0–63, plus 64/65 for system foreground/ba
 const PRESET_COLORS: Record<string, string>;
 ```
 
-OOXML preset color names mapped to RGB hex strings.
+OOXML preset color names mapped to 6-digit sRGB hex strings.
 
-These are the values defined in ECMA-376 Part 1, section 20.1.10.47 (`ST_PresetColorVal`).
+These are the colors defined in ECMA-376 Part 1, section 20.1.10.47 (`ST_PresetColorVal`).
 
 
 <a name="variablessystem_colorsmd"></a>
@@ -301,5 +304,6 @@ const SYSTEM_COLORS: Record<string, string>;
 ```
 
 Default RGB hex values for Windows system colors, used when resolving `system` Color values.
+The values are all 6-digit sRGB hex strings.
 
 The values here are typical Windows defaults and match those produced by Excel.
