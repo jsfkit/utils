@@ -4,6 +4,15 @@ import { hslToRgb } from './hslToRgb.ts';
 import { INDEXED_COLORS, DEFAULT_THEME_COLOR_SCHEME, SCHEME_KEYS } from './constants.ts';
 import { applyColorTransforms } from './applyColorTransforms.ts';
 import type { RGBA } from './types.ts';
+import { clamp } from './clamp.ts';
+
+// correct an RGB channel value from 1.0γ to sRGB 2.2γ
+const gammaCorrect = (c: number) => {
+  const v = Math.max(0, c);
+  return v <= 0.0031308
+    ? v * 12.92
+    : 1.055 * (v ** (1 / 2.4)) - 0.055;
+};
 
 /**
  * Resolves a JSF Color object to an RGBA tuple.
@@ -34,9 +43,9 @@ export function toRGBA (
   }
   else if (color.type === 'scrgb') {
     rgba = [
-      Math.round(color.red / 100 * 255),
-      Math.round(color.green / 100 * 255),
-      Math.round(color.blue / 100 * 255),
+      clamp(0, Math.round(gammaCorrect(color.red / 100) * 255), 255),
+      clamp(0, Math.round(gammaCorrect(color.green / 100) * 255), 255),
+      clamp(0, Math.round(gammaCorrect(color.blue / 100) * 255), 255),
       1,
     ];
   }

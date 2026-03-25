@@ -1,5 +1,6 @@
 /**
  * A set of numbers representing R, G, B, and A, color channels respectively.
+ * The color is assumed to use the sRGB colorspace.
  *
  * R, G, and B values range from 0 to 255.
  * A ranges from 0 to 1.
@@ -8,6 +9,7 @@ export type RGBA = [ number, number, number, number ];
 
 /**
  * A set of numbers representing R, G, and B, color channels respectively.
+ * The color is assumed to use the sRGB colorspace.
  *
  * All values range from 0 to 255.
  */

@@ -37,9 +37,9 @@ describe('toRGBA', () => {
       expect(toRGBA(color)).toEqual([ 255, 0, 0, 1 ]);
     });
 
-    it('converts mid-gray (50, 50, 50) to [128, 128, 128, 1]', () => {
+    it('converts mid-gray (50, 50, 50) to [188, 188, 188, 1]', () => {
       const color: Color = { type: 'scrgb', red: 50, green: 50, blue: 50 };
-      expect(toRGBA(color)).toEqual([ 128, 128, 128, 1 ]);
+      expect(toRGBA(color)).toEqual([ 188, 188, 188, 1 ]);
     });
 
     it('converts black (0, 0, 0) to [0, 0, 0, 1]', () => {
@@ -354,7 +354,7 @@ describe('toRGBA', () => {
 
     it('handles scrgb with fractional percentages via Math.round', () => {
       const result = toRGBA({ type: 'scrgb', red: 33.33, green: 66.66, blue: 99.99 });
-      expect(result).toEqual([ 85, 170, 255, 1 ]);
+      expect(result).toEqual([ 156, 213, 255, 1 ]);
     });
 
     it('theme phClr maps to lt1', () => {

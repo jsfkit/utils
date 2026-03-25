@@ -49,6 +49,7 @@ export const DEFAULT_THEME_COLOR_SCHEME: ThemeColorScheme = {
 
 /**
  * OOXML indexed color palette (indices 0–63, plus 64/65 for system foreground/background).
+ * The values are all 6-digit sRGB hex strings.
  */
 export const INDEXED_COLORS: string[] = [
   /* eslint-disable @stylistic/array-element-newline */
@@ -66,6 +67,7 @@ export const INDEXED_COLORS: string[] = [
 
 /**
  * Default RGB hex values for Windows system colors, used when resolving `system` Color values.
+ * The values are all 6-digit sRGB hex strings.
  *
  * The values here are typical Windows defaults and match those produced by Excel.
  */
@@ -105,9 +107,9 @@ export const SYSTEM_COLORS: Record<string, string> = {
 };
 
 /**
- * OOXML preset color names mapped to RGB hex strings.
+ * OOXML preset color names mapped to 6-digit sRGB hex strings.
  *
- * These are the values defined in ECMA-376 Part 1, section 20.1.10.47 (`ST_PresetColorVal`).
+ * These are the colors defined in ECMA-376 Part 1, section 20.1.10.47 (`ST_PresetColorVal`).
  */
 export const PRESET_COLORS: Record<string, string> = {
   aliceBlue: 'F0F8FF',
