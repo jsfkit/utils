@@ -35,10 +35,9 @@ export function toRGBA (
     // Ensure we don't end up in an infinitely recursing color resolution
     if (tColor.type === 'theme') { return rgba; }
     // themeColor is now a non-theme Color, so we can pass it back through
-    return toRGBA(tColor, themeColors, INDEXED_COLORS);
+    rgba = toRGBA(tColor, themeColors, INDEXED_COLORS);
   }
-
-  if (color.type === 'srgb') {
+  else if (color.type === 'srgb') {
     rgba = parseRGBA(color.value);
   }
   else if (color.type === 'scrgb') {
