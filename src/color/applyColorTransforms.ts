@@ -113,10 +113,10 @@ export function applyColorTransforms (
     }
 
     else if (type === 'tint') {
-      [ r, g, b ] = tint(r, g, b, op.value / 100);
+      [ r, g, b ] = tint(r, g, b, 1 - (op.value / 100));
     }
     else if (type === 'shade') {
-      [ r, g, b ] = tint(r, g, b, -op.value / 100);
+      [ r, g, b ] = tint(r, g, b, -(1 - op.value / 100));
     }
 
     // if transformation used HSL space, convert color back to RGB

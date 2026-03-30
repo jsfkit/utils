@@ -397,18 +397,18 @@ describe('applyColorTransforms', () => {
       expect(result).toEqual([ 255, 127, 127, 1 ]);
     });
 
-    it('100% tint turns color to white', () => {
+    it('100% tint leaves color unchanged', () => {
       const result = applyColorTransforms([ 255, 0, 0, 1 ], [
         { type: 'tint', value: 100 },
       ]);
-      expect(result).toEqual([ 255, 255, 255, 1 ]);
+      expect(result).toEqual([ 255, 0, 0, 1 ]);
     });
 
-    it('0% tint leaves color unchanged', () => {
+    it('0% tint turns color to white', () => {
       const result = applyColorTransforms([ 200, 100, 50, 1 ], [
         { type: 'tint', value: 0 },
       ]);
-      expect(result).toEqual([ 200, 100, 50, 1 ]);
+      expect(result).toEqual([ 255, 255, 255, 1 ]);
     });
   });
 
@@ -422,18 +422,18 @@ describe('applyColorTransforms', () => {
       expect(result).toEqual([ 127, 0, 0, 1 ]);
     });
 
-    it('100% shade turns color to black', () => {
+    it('100% shade leaves color unchanged', () => {
       const result = applyColorTransforms([ 255, 128, 64, 1 ], [
         { type: 'shade', value: 100 },
       ]);
-      expect(result).toEqual([ 0, 0, 0, 1 ]);
+      expect(result).toEqual([ 255, 128, 64, 1 ]);
     });
 
-    it('0% shade leaves color unchanged', () => {
+    it('0% shade turns color to black', () => {
       const result = applyColorTransforms([ 200, 100, 50, 1 ], [
         { type: 'shade', value: 0 },
       ]);
-      expect(result).toEqual([ 200, 100, 50, 1 ]);
+      expect(result).toEqual([ 0, 0, 0, 1 ]);
     });
   });
 
