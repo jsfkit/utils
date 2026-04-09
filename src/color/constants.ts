@@ -133,14 +133,35 @@ export const PRESET_COLORS: Record<string, string> = {
   cornsilk: 'FFF8DC',
   crimson: 'DC143C',
   cyan: '00FFFF',
+  darkBlue: '00008B',
+  darkCyan: '008B8B',
+  darkGoldenrod: 'B8860B',
+  darkGray: 'A9A9A9',
+  darkGreen: '006400',
+  darkGrey: 'A9A9A9',
+  darkKhaki: 'BDB76B',
+  darkMagenta: '8B008B',
+  darkOliveGreen: '556B2F',
+  darkOrange: 'FF8C00',
+  darkOrchid: '9932CC',
+  darkRed: '8B0000',
+  darkSalmon: 'E9967A',
+  darkSeaGreen: '8FBC8F',
+  darkSlateBlue: '483D8B',
+  darkSlateGray: '2F4F4F',
+  darkSlateGrey: '2F4F4F',
+  darkTurquoise: '00CED1',
+  darkViolet: '9400D3',
   deepPink: 'FF1493',
   deepSkyBlue: '00BFFF',
   dimGray: '696969',
+  dimGrey: '696969',
   dkBlue: '00008B', // CSS color equivalent is "darkblue"
   dkCyan: '008B8B', // CSS color equivalent is "darkcyan"
   dkGoldenrod: 'B8860B', // CSS color equivalent is "darkgoldenrod"
   dkGray: 'A9A9A9', // CSS color equivalent is "darkgray"
   dkGreen: '006400', // CSS color equivalent is "darkgreen"
+  dkGrey: 'A9A9A9', // CSS color equivalent is "darkgrey"
   dkKhaki: 'BDB76B', // CSS color equivalent is "darkkhaki"
   dkMagenta: '8B008B', // CSS color equivalent is "darkmagenta"
   dkOliveGreen: '556B2F', // CSS color equivalent is "darkolivegreen"
@@ -151,6 +172,7 @@ export const PRESET_COLORS: Record<string, string> = {
   dkSeaGreen: '8FBC8B', // CSS color equivalent is "darkseagreen"
   dkSlateBlue: '483D8B', // CSS color equivalent is "darkslateblue"
   dkSlateGray: '2F4F4F', // CSS color equivalent is "darkslategray"
+  dkSlateGrey: '2F4F4F', // CSS color equivalent is "darkslategrey"
   dkTurquoise: '00CED1', // CSS color equivalent is "darkturquoise"
   dkViolet: '9400D3', // CSS color equivalent is "darkviolet"
   dodgerBlue: '1E90FF',
@@ -165,6 +187,7 @@ export const PRESET_COLORS: Record<string, string> = {
   gray: '808080',
   green: '008000',
   greenYellow: 'ADFF2F',
+  grey: '808080',
   honeydew: 'F0FFF0',
   hotPink: 'FF69B4',
   indianRed: 'CD5C5C',
@@ -175,6 +198,21 @@ export const PRESET_COLORS: Record<string, string> = {
   lavenderBlush: 'FFF0F5',
   lawnGreen: '7CFC00',
   lemonChiffon: 'FFFACD',
+  lightBlue: 'ADD8E6',
+  lightCoral: 'F08080',
+  lightCyan: 'E0FFFF',
+  lightGoldenrodYellow: 'FAFAD2',
+  lightGray: 'D3D3D3',
+  lightGreen: '90EE90',
+  lightGrey: 'D3D3D3',
+  lightPink: 'FFB6C1',
+  lightSalmon: 'FFA07A',
+  lightSeaGreen: '20B2AA',
+  lightSkyBlue: '87CEFA',
+  lightSlateGray: '778899',
+  lightSlateGrey: '778899',
+  lightSteelBlue: 'B0C4DE',
+  lightYellow: 'FFFFE0',
   lime: '00FF00',
   limeGreen: '32CD32',
   linen: 'FAF0E6',
@@ -184,17 +222,28 @@ export const PRESET_COLORS: Record<string, string> = {
   ltGoldenrodYellow: 'FAFA78', // CSS color equivalent is "lightgoldenrodyellow"
   ltGray: 'D3D3D3', // CSS color equivalent is "lightgray"
   ltGreen: '90EE90', // CSS color equivalent is "lightgreen"
+  ltGrey: 'D3D3D3', // CSS color equivalent is "lightgrey"
   ltPink: 'FFB6C1', // CSS color equivalent is "lightpink"
   ltSalmon: 'FFA07A', // CSS color equivalent is "lightsalmon"
   ltSeaGreen: '20B2AA', // CSS color equivalent is "lightseagreen"
   ltSkyBlue: '87CEFA', // CSS color equivalent is "lightskyblue"
   ltSlateGray: '778899', // CSS color equivalent is "lightslategray"
+  ltSlateGrey: '778899', // CSS color equivalent is "lightslategrey"
   ltSteelBlue: 'B0C4DE', // CSS color equivalent is "lightsteelblue"
   ltYellow: 'FFFFE0', // CSS color equivalent is "lightyellow"
   magenta: 'FF00FF',
   maroon: '800000',
   medAquamarine: '66CDAA', // CSS color equivalent is "mediumaquamarine"
   medBlue: '0000CD', // CSS color equivalent is "mediumblue"
+  mediumAquamarine: '66CDAA',
+  mediumBlue: '0000CD',
+  mediumOrchid: 'BA55D3',
+  mediumPurple: '9370DB',
+  mediumSeaGreen: '3CB371',
+  mediumSlateBlue: '7B68EE',
+  mediumSpringGreen: '00FA9A',
+  mediumTurquoise: '48D1CC',
+  mediumVioletRed: 'C71585',
   medOrchid: 'BA55D3', // CSS color equivalent is "mediumorchid"
   medPurple: '9370DB', // CSS color equivalent is "mediumpurple"
   medSeaGreen: '3CB371', // CSS color equivalent is "mediumseagreen"
@@ -238,6 +287,7 @@ export const PRESET_COLORS: Record<string, string> = {
   skyBlue: '87CEEB',
   slateBlue: '6A5ACD',
   slateGray: '708090',
+  slateGrey: '708090',
   snow: 'FFFAFA',
   springGreen: '00FF7F',
   steelBlue: '4682B4',
