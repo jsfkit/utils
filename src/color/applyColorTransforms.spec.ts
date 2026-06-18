@@ -394,7 +394,7 @@ describe('applyColorTransforms', () => {
       const result = applyColorTransforms([ 255, 0, 0, 1 ], [
         { type: 'tint', value: 50 },
       ]);
-      expect(result).toEqual([ 255, 127, 127, 1 ]);
+      expect(result).toEqual([ 255, 128, 128, 1 ]);
     });
 
     it('100% tint leaves color unchanged', () => {
@@ -419,7 +419,7 @@ describe('applyColorTransforms', () => {
       const result = applyColorTransforms([ 255, 0, 0, 1 ], [
         { type: 'shade', value: 50 },
       ]);
-      expect(result).toEqual([ 127, 0, 0, 1 ]);
+      expect(result).toEqual([ 128, 0, 0, 1 ]);
     });
 
     it('100% shade leaves color unchanged', () => {

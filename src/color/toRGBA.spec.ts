@@ -302,7 +302,7 @@ describe('toRGBA', () => {
         transforms: [ { type: 'tint', value: 50 } ],
       } as Color;
       const result = toRGBA(color);
-      expect(result).toEqual([ 127, 127, 127, 1 ]);
+      expect(result).toEqual([ 128, 128, 128, 1 ]);
     });
 
     it('applies shade transform to darken a color', () => {
@@ -312,7 +312,7 @@ describe('toRGBA', () => {
         transforms: [ { type: 'shade', value: 50 } ],
       } as Color;
       const result = toRGBA(color);
-      expect(result).toEqual([ 127, 127, 127, 1 ]);
+      expect(result).toEqual([ 128, 128, 128, 1 ]);
     });
 
     it('applies multiple transforms in sequence', () => {
@@ -325,7 +325,7 @@ describe('toRGBA', () => {
         ],
       } as Color;
       const result = toRGBA(color);
-      expect(result).toEqual([ 255, 127, 127, 0.75 ]);
+      expect(result).toEqual([ 255, 128, 128, 0.75 ]);
     });
 
     it('applies lumMod transform', () => {

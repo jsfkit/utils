@@ -1,6 +1,12 @@
-import { hslToRgb } from './hslToRgb.ts';
-import { rgbToHsl } from './rgbToHsl.ts';
+import { tintHls } from './win32Hls.ts';
 
+/**
+ * Apply a spreadsheet theme tint to an RGB colour.
+ *
+ * `amount` is the theme tint in [-1, 1]: negative darkens, positive lightens, 0 is a no-op. This
+ * reproduces Excel's integer Win32-HLS round-trip (see {@link tintHls}) rather than the ECMA-376
+ * float-HSL formula, so the result matches what Excel resolves for `<color theme … tint=…>`.
+ */
 export function tint (
   r: number,
   g: number,
@@ -8,17 +14,8 @@ export function tint (
   amount: number,
 ): [ number, number, number ] | [ number, number, number, number ] {
   if (amount) {
-    // eslint-disable-next-line prefer-const
-    let [ h, s, l ] = rgbToHsl(r, g, b);
-    if (amount < 0) { // darken
-      const Ɛ = 1 + amount;
-      l = Ɛ * l;
-    }
-    else { // lighten
-      const Ɛ = 1 - amount;
-      l = (Ɛ * l) + (1 - Ɛ);
-    }
-    return hslToRgb(h, s, l);
+    const [ tr, tg, tb ] = tintHls([ r, g, b ], amount);
+    return [ tr, tg, tb, 1 ];
   }
   return [ r, g, b ];
 }
