@@ -1,11 +1,11 @@
 import type { RGB } from './types.ts';
 
-// Win32 GDI integer HLS round-trip (the classic `ColorRGBToHLS` / `ColorHLSToRGB` from Microsoft
-// KB Q29240), reproduced faithfully. Excel resolves a theme colour + tint by converting the base
-// RGB to integer HLS, scaling the luminance by the tint, and converting back -- all in integer
-// arithmetic over a 240-step hue/luminance/saturation space (HLSMAX) and an 8-bit RGB space
-// (RGBMAX). This wobble-prone round-trip, not the ECMA-376 §18.3.1.4 float-HSL formula, is what
-// Excel actually emits; matching it bit-for-bit is the point of this module (PRODUCT-11093).
+// Win32 GDI integer HLS round-trip (the classic `RGBtoHLS` / `HLStoRGB` from Microsoft KB Q29240),
+// reproduced faithfully. Excel resolves a theme colour + tint by converting the base RGB to integer
+// HLS, scaling the luminance by the tint, and converting back -- all in integer arithmetic over a
+// 240-step hue/luminance/saturation space (HLSMAX) and an 8-bit RGB space (RGBMAX). This lossy
+// integer round-trip, not the ECMA-376 §18.3.1.4 float-HSL formula, is what Excel actually emits,
+// and matching it bit-for-bit is the point of this module.
 
 const HLSMAX = 240;
 const RGBMAX = 255;

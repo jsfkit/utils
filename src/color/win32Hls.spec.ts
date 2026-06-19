@@ -28,11 +28,11 @@ describe('tintHls', () => {
 
   // Excel ground truth (Excel for Mac 16.111), read back from a workbook whose theme is the
   // current Office palette. Each row is [ base, theme tint, RGB Excel resolved ]. A representative
-  // subset of the 232-sample oracle at
+  // subset of the 232 readback samples in the apiary repo at
   // apiary/excel-test/pivot-tint-quantization/results/excel-readback.json — all 232 match; these 64
   // span every theme slot, both lighten and darken, and the int16-coercion and achromatic-grey edge
   // cases that distinguish Excel's integer HLS round-trip from the float-HSL formula.
-  describe('matches the Excel integer-HLS oracle', () => {
+  describe('matches Excel for the integer-HLS round-trip', () => {
     const cases: Array<[ string, number, string ]> = [
       [ '156082', 0.7999816888943144, 'C0E6F5' ],
       [ '156082', 0.3999755851924192, '44B3E1' ],
