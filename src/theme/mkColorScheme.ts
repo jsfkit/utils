@@ -1,7 +1,8 @@
 import type { ThemeColorScheme } from '@jsfkit/types';
+import { deepFreeze } from '../deepFreeze.ts';
 
-export function mkColorScheme (pal: string[] = [], name: string = 'Office'): ThemeColorScheme {
-  return {
+export function mkColorScheme (pal: string[] = [], name: string = 'Office'): Readonly<ThemeColorScheme> {
+  return deepFreeze({
     name: name,
     dk1: { type: 'system', value: 'windowText' },
     lt1: { type: 'system', value: 'window' },
@@ -15,5 +16,5 @@ export function mkColorScheme (pal: string[] = [], name: string = 'Office'): The
     accent6: { type: 'srgb', value: pal[7] || '4EA72E' },
     hlink: { type: 'srgb', value: pal[8] || '467886' },
     folHlink: { type: 'srgb', value: pal[9] || '96607D' },
-  };
+  });
 }

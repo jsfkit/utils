@@ -24,7 +24,7 @@ const gammaCorrect = (c: number) => {
 export function toRGBA (
   color: Color,
   themeColors: ThemeColorScheme = DEFAULT_THEME_COLOR_SCHEME,
-  indexedColors: string[] = INDEXED_COLORS,
+  indexedColors: readonly string[] = INDEXED_COLORS,
 ): RGBA {
   let rgba: RGBA = [ 0, 0, 0, 1 ];
 
