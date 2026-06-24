@@ -91,11 +91,12 @@ function hlsToRgb (H: number, L: number, S: number): RGB {
 }
 
 // The tinted luminance is computed in floating point, then truncated to an integer before the
-// back-conversion (matching how Excel applies the tint in HLS space). A small epsilon absorbs the
-// sub-LSB deficit left by Excel's int16 tint coercion (n/32767): a nominal +0.4 tint stored as
-// 0.39997558 yields e.g. L=155.9966, whose intended integer is 156, not 155. The deficit never
-// exceeds ~0.004, and the smallest genuine fractional luminance observed is 0.95, so the epsilon
-// has a wide safe margin and never promotes a value that should truncate down.
+// back-conversion (consistent with the RGB values Excel reads back; Excel exposes only RGB, not its
+// internal HLS step). A small epsilon absorbs the sub-LSB deficit left by Excel's int16 tint
+// coercion (n/32767): a nominal +0.4 tint stored as 0.39997558 yields e.g. L=155.9966, whose
+// intended integer is 156, not 155. The deficit never exceeds ~0.004, and the smallest genuine
+// fractional luminance observed is 0.95, so the epsilon has a wide safe margin and never promotes a
+// value that should truncate down.
 const LUM_EPSILON = 0.01;
 
 /**
@@ -104,7 +105,8 @@ const LUM_EPSILON = 0.01;
  *
  * @param rgb The base RGB colour (channels 0–255).
  * @param tint The theme tint in [-1, 1]: negative darkens (`L * (1 + tint)`), positive lightens
- *   (`L * (1 - tint) + HLSMAX * tint`). A tint of 0 returns the base unchanged.
+ *   (`L * (1 - tint) + HLSMAX * tint`). A tint of 0 returns the base unchanged. Values outside
+ *   [-1, 1] are not clamped, so an out-of-range tint can yield out-of-bounds channels.
  * @returns The tinted RGB with integer channels.
  */
 export function tintHls (rgb: RGB, tint: number): RGB {
