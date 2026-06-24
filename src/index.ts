@@ -1,3 +1,5 @@
+export { THEMES } from './theme/constants.ts';
+
 export type { RGBA, RGB } from './color/types.ts';
 
 export {

@@ -1,4 +1,5 @@
 import type { SchemeColor, ThemeColorScheme } from '@jsfkit/types';
+import { mkColorScheme } from '../theme/mkColorScheme.ts';
 
 /**
  * Semantic scheme aliases that map to canonical scheme keys. Includes the canonical
@@ -31,21 +32,7 @@ export const SCHEME_KEYS: Record<SchemeColor['value'], 'lt1' | 'dk1' | 'lt2' | '
 /**
  * The current default Office theme color scheme.
  */
-export const DEFAULT_THEME_COLOR_SCHEME: ThemeColorScheme = {
-  name: 'Office',
-  dk1: { type: 'system', value: 'windowText' },
-  lt1: { type: 'system', value: 'window' },
-  dk2: { type: 'srgb', value: '44546A' },
-  lt2: { type: 'srgb', value: 'E7E6E6' },
-  accent1: { type: 'srgb', value: '4472C4' },
-  accent2: { type: 'srgb', value: 'ED7D31' },
-  accent3: { type: 'srgb', value: 'A5A5A5' },
-  accent4: { type: 'srgb', value: 'FFC000' },
-  accent5: { type: 'srgb', value: '5B9BD5' },
-  accent6: { type: 'srgb', value: '70AD47' },
-  hlink: { type: 'srgb', value: '0563C1' },
-  folHlink: { type: 'srgb', value: '954F72' },
-};
+export const DEFAULT_THEME_COLOR_SCHEME: ThemeColorScheme = mkColorScheme();
 
 /**
  * OOXML indexed color palette (indices 0–63, plus 64/65 for system foreground/background).
