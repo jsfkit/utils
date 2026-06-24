@@ -143,9 +143,9 @@ describe('toRGBA', () => {
   // ── theme colors (default scheme) ────────────────────────────────────
 
   describe('theme colors (default scheme)', () => {
-    it('resolves accent1 to [68, 114, 196, 1]', () => {
+    it('resolves accent1 to [21, 96, 130, 1]', () => {
       const color: Color = { type: 'theme', value: 'accent1' };
-      expect(toRGBA(color)).toEqual([ 68, 114, 196, 1 ]);
+      expect(toRGBA(color)).toEqual([ 21, 96, 130, 1 ]);
     });
 
     it('resolves dk1 → system windowText → black [0, 0, 0, 1]', () => {
@@ -168,19 +168,19 @@ describe('toRGBA', () => {
       expect(toRGBA(color)).toEqual([ 0, 0, 0, 1 ]);
     });
 
-    it('resolves bg2 → lt2 → [231, 230, 230, 1]', () => {
+    it('resolves bg2 → lt2 → [232, 232, 232, 1]', () => {
       const color: Color = { type: 'theme', value: 'bg2' };
-      expect(toRGBA(color)).toEqual([ 231, 230, 230, 1 ]);
+      expect(toRGBA(color)).toEqual([ 232, 232, 232, 1 ]);
     });
 
-    it('resolves tx2 → dk2 → [68, 84, 106, 1]', () => {
+    it('resolves tx2 → dk2 → [14, 40, 65, 1]', () => {
       const color: Color = { type: 'theme', value: 'tx2' };
-      expect(toRGBA(color)).toEqual([ 68, 84, 106, 1 ]);
+      expect(toRGBA(color)).toEqual([ 14, 40, 65, 1 ]);
     });
 
-    it('resolves accent2 → [237, 125, 49, 1]', () => {
+    it('resolves accent2 → [233, 113, 50, 1]', () => {
       const color: Color = { type: 'theme', value: 'accent2' };
-      expect(toRGBA(color)).toEqual([ 237, 125, 49, 1 ]);
+      expect(toRGBA(color)).toEqual([ 233, 113, 50, 1 ]);
     });
   });
 
