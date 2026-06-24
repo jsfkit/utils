@@ -28,8 +28,7 @@ describe('tintHls', () => {
 
   // Excel ground truth (Excel for Mac 16.111), read back from a workbook whose theme is the
   // current Office palette. Each row is [ base, theme tint, RGB Excel resolved ]. A representative
-  // subset of the 232 readback samples in the apiary repo at
-  // apiary/excel-test/pivot-tint-quantization/results/excel-readback.json — all 232 match; these 64
+  // subset of 232 such samples read back from Excel (all 232 reproduce from this routine); these 64
   // span every theme slot, both lighten and darken, and the int16-coercion and achromatic-grey edge
   // cases that distinguish Excel's integer HLS round-trip from the float-HSL formula.
   describe('matches Excel for the integer-HLS round-trip', () => {
