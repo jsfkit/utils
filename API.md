@@ -14,6 +14,7 @@
 - [INDEXED\_COLORS](#variablesindexed_colorsmd)
 - [PRESET\_COLORS](#variablespreset_colorsmd)
 - [SYSTEM\_COLORS](#variablessystem_colorsmd)
+- [THEMES](#variablesthemesmd)
 
 ## Functions
 
@@ -307,3 +308,18 @@ Default RGB hex values for Windows system colors, used when resolving `system` C
 The values are all 6-digit sRGB hex strings.
 
 The values here are typical Windows defaults and match those produced by Excel.
+
+
+<a name="variablesthemesmd"></a>
+
+# THEMES
+
+```ts
+const THEMES: Record<string, Theme>;
+```
+
+A lookup of default Office theme definitions keyed by Excel build number.
+
+Each entry corresponds to the default theme that shipped with a specific
+version of Excel. The `"default"` key always points to the current
+(most recent) theme.
