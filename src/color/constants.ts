@@ -32,13 +32,13 @@ export const SCHEME_KEYS: Record<SchemeColor['value'], 'lt1' | 'dk1' | 'lt2' | '
 /**
  * The current default Office theme color scheme.
  */
-export const DEFAULT_THEME_COLOR_SCHEME: ThemeColorScheme = mkColorScheme();
+export const DEFAULT_THEME_COLOR_SCHEME: Readonly<ThemeColorScheme> = mkColorScheme();
 
 /**
  * OOXML indexed color palette (indices 0–63, plus 64/65 for system foreground/background).
  * The values are all 6-digit sRGB hex strings.
  */
-export const INDEXED_COLORS: string[] = [
+export const INDEXED_COLORS: readonly string[] = Object.freeze([
   /* eslint-disable @stylistic/array-element-newline */
   '000000', 'FFFFFF', 'FF0000', '00FF00', '0000FF', 'FFFF00', 'FF00FF', '00FFFF', // 0–7
   '000000', 'FFFFFF', 'FF0000', '00FF00', '0000FF', 'FFFF00', 'FF00FF', '00FFFF', // 8–15
@@ -50,7 +50,7 @@ export const INDEXED_COLORS: string[] = [
   '003366', '339966', '003300', '333300', '993300', '993366', '333399', '333333', // 56–63
   '000000', 'FFFFFF',                                                             // 64–65: system foreground/background
   /* eslint-enable @stylistic/array-element-newline */
-];
+]);
 
 /**
  * Default RGB hex values for Windows system colors, used when resolving `system` Color values.
@@ -58,7 +58,7 @@ export const INDEXED_COLORS: string[] = [
  *
  * The values here are typical Windows defaults and match those produced by Excel.
  */
-export const SYSTEM_COLORS: Record<string, string> = {
+export const SYSTEM_COLORS: Readonly<Record<string, string>> = Object.freeze({
   // 'System Foreground': 'FF000000',
   // 'System Background': 'FFFFFFFF',
   '3dDkShadow': '696969',
@@ -91,14 +91,14 @@ export const SYSTEM_COLORS: Record<string, string> = {
   'window': 'FFFFFF',
   'windowFrame': '646464',
   'windowText': '000000',
-};
+});
 
 /**
  * OOXML preset color names mapped to 6-digit sRGB hex strings.
  *
  * These are the colors defined in ECMA-376 Part 1, section 20.1.10.47 (`ST_PresetColorVal`).
  */
-export const PRESET_COLORS: Record<string, string> = {
+export const PRESET_COLORS: Readonly<Record<string, string>> = Object.freeze({
   aliceBlue: 'F0F8FF',
   antiqueWhite: 'FAEBD7',
   aqua: '00FFFF',
@@ -289,4 +289,4 @@ export const PRESET_COLORS: Record<string, string> = {
   whiteSmoke: 'F5F5F5',
   yellow: 'FFFF00',
   yellowGreen: '9ACD32',
-};
+});

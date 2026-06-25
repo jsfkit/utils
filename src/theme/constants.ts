@@ -8,7 +8,7 @@ import { mkTheme } from './mkTheme.ts';
  * version of Excel. The `"default"` key always points to the current
  * (most recent) theme.
  */
-export const THEMES: Record<string, Theme> = {
+export const THEMES: Record<string, Readonly<Theme>> = {
   // Excel 2007
   123820:  mkTheme([ '1F497D', 'EEECE1', '4F81BD', 'C0504D', '9BBB59', '8064A2', '4BACC6', 'F79646', '0000FF', '800080' ], 'Cambria', 'Calibri'),
   // Excel 2010

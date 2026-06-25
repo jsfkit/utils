@@ -213,7 +213,7 @@ An 8 digit hex color string (`FFC823FF`).
 function toRGBA(
    color: Color, 
    themeColors?: ThemeColorScheme, 
-   indexedColors?: string[]): RGBA;
+   indexedColors?: readonly string[]): RGBA;
 ```
 
 Resolves a JSF Color object to an RGBA tuple.
@@ -224,7 +224,7 @@ Resolves a JSF Color object to an RGBA tuple.
 | ------ | ------ | ------ | ------ |
 | `color` | `Color` | `undefined` | A JSF Color object. |
 | `themeColors?` | `ThemeColorScheme` | `DEFAULT_THEME_COLOR_SCHEME` | A JSF ThemeColorScheme used to resolve Schema colors. |
-| `indexedColors?` | `string`[] | `INDEXED_COLORS` | A list of 6-digit hex codes to use to |
+| `indexedColors?` | readonly `string`[] | `INDEXED_COLORS` | A list of 6-digit hex codes to use to |
 
 ## Returns
 
@@ -265,7 +265,7 @@ A ranges from 0 to 1.
 # DEFAULT\_THEME\_COLOR\_SCHEME
 
 ```ts
-const DEFAULT_THEME_COLOR_SCHEME: ThemeColorScheme;
+const DEFAULT_THEME_COLOR_SCHEME: Readonly<ThemeColorScheme>;
 ```
 
 The current default Office theme color scheme.
@@ -276,7 +276,7 @@ The current default Office theme color scheme.
 # INDEXED\_COLORS
 
 ```ts
-const INDEXED_COLORS: string[];
+const INDEXED_COLORS: readonly string[];
 ```
 
 OOXML indexed color palette (indices 0–63, plus 64/65 for system foreground/background).
@@ -288,7 +288,7 @@ The values are all 6-digit sRGB hex strings.
 # PRESET\_COLORS
 
 ```ts
-const PRESET_COLORS: Record<string, string>;
+const PRESET_COLORS: Readonly<Record<string, string>>;
 ```
 
 OOXML preset color names mapped to 6-digit sRGB hex strings.
@@ -301,7 +301,7 @@ These are the colors defined in ECMA-376 Part 1, section 20.1.10.47 (`ST_PresetC
 # SYSTEM\_COLORS
 
 ```ts
-const SYSTEM_COLORS: Record<string, string>;
+const SYSTEM_COLORS: Readonly<Record<string, string>>;
 ```
 
 Default RGB hex values for Windows system colors, used when resolving `system` Color values.
@@ -315,7 +315,7 @@ The values here are typical Windows defaults and match those produced by Excel.
 # THEMES
 
 ```ts
-const THEMES: Record<string, Theme>;
+const THEMES: Record<string, Readonly<Theme>>;
 ```
 
 A lookup of default Office theme definitions keyed by Excel build number.
