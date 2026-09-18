@@ -54,6 +54,6 @@
     "vitest": "~4.1.1"
   },
   "peerDependencies": {
-    "@jsfkit/types": "~2.0.0"
+    "@jsfkit/types": "^2.0.0"
   }
 }
