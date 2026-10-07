@@ -14,3 +14,7 @@ npm install @jsfkit/utils
 ## Documentation
 
 API documentation can be found in [API.md](./API.md).
+
+---
+
+Development of @jsfkit/utils is sponsored by [GRID](https://grid.is/), the spreadsheet engine for AI agents.
